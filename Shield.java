@@ -14,7 +14,13 @@ public class Shield {
 
         // TODO 1 : map names to agents list
         List<Agent> agents = new ArrayList<>();
-
+        agents = names.stream().map(temp -> {
+          Agent agt = new Agent(
+          temp.split(" ")[0],
+          temp.split(" ")[1]
+          );
+          return agt;
+        }).collect(Collectors.toList());
         showAgents(agents);
     }
 
